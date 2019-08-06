@@ -56191,6 +56191,11 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.use(buefy__WEBPACK_IMPORTED_MODULE_0__["default"]); // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+var app = new Vue({
+  el: '#app',
+  data: {}
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
