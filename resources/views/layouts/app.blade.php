@@ -67,7 +67,7 @@
                         @else
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link">
-                                  Hey User
+                                    {{ Auth::user()->name }}
                                 </a>
                                 <div class="navbar-dropdown is-right is-boxed">
                                     <a class="navbar-item">
