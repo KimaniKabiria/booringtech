@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Booring Tech') }}</title>
+    <title>BooringTech - Mission Control</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,13 +23,14 @@
 <body>
     <div id="app">
 
-        @include('includes.mainnav')
+        @include('includes.managenav')
+        @include('includes.managesidenav')
 
         <main class="py-4">
             @yield('content')
         </main>
 
-        @include('includes.mainfoot')
+        @include('includes.managefoot')
     </div>
 </body>
 </html>
