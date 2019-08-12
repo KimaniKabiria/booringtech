@@ -23,6 +23,7 @@ Route ::prefix('manage')->middleware('role:superadministrator|administrator|edit
     Route::get('/', 'ManageController@index');
     Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
     Route::resource('users', 'ManageUserController');
+    Route::resource('permissions', 'ManagePermissionsController');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

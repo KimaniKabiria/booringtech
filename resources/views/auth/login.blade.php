@@ -31,7 +31,9 @@
                             <p class="help is-danger" role="alert">{{ $message }}</p>
                         @enderror
                     </div>
-                    <b-checkbox type="checkbox" name="remember" id="remember" style="margin-top:20px">Remember Me</b-checkbox>
+                    <div class="field">
+                        <b-checkbox name="remember">Remember Me</b-checkbox>
+                    </div>
                     <button class="button is-primary is-outlined is-fullwidth" style="margin-top:30px" type="submit">Log In</button>
                 </form>
 
