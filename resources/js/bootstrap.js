@@ -1,4 +1,10 @@
-window._ = require('lodash');
+import Vue from 'vue';
+import Buefy from 'buefy';
+
+window._ = require('lodash')
+
+window.Vue = Vue
+Vue.use(Buefy)
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support

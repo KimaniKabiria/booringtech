@@ -21,16 +21,20 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
 
         @include('includes.managenav')
         @include('includes.managesidenav')
 
+    <div class="management-area" id="app">
         <main class="py-4">
             @yield('content')
         </main>
 
-        @include('includes.managefoot')
+        {{-- @include('includes.managefoot') --}}
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>

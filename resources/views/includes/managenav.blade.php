@@ -14,17 +14,17 @@
         <div id="navbarMain" class="navbar-menu">
           <div class="navbar-start">
             <div class="navbar-item"></div>
-            <a class="navbar-item">
-                <h1 class="title is-5 has-text-info">Read</h1>
+            {{-- <a class="navbar-item">
+                <h1 class="title is-5">Read</h1>
             </a>
 
             <a class="navbar-item">
-                <h1 class="title is-5 has-text-primary">Discuss</h1>
+                <h1 class="title is-5">Discuss</h1>
             </a>
 
             <a class="navbar-item">
-                <h1 class="title is-5 has-text-danger">Share</h1>
-            </a>
+                <h1 class="title is-5">Share</h1>
+            </a> --}}
           </div>
 
           <div class="navbar-end">
