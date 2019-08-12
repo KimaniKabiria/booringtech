@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="has-text-white">
+                <a href="{{route('roles.index')}}" class="has-text-white">
                     <i class="fa fa-users" style="margin-right: 10px"></i>Roles
                 </a>
             </li>
