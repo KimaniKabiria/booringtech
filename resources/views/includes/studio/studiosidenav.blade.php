@@ -9,18 +9,18 @@
         </ul>
         <p class="menu-label">
             Create
-            <i class="fa fa-pencil" style="margin-right: 10px"></i>
+            <i class="fa fa-pencil" style="margin-left: 10px"></i>
             <hr style="margin-top:1px;margin-bottom:1px">
         </p>
         <ul class="menu-list">
             <li>
-                <a href="{{route('users.index')}}">
-                    <i class="fa fa-user" style="margin-right: 10px"></i>Users
+                <a href="{{route('posts.index')}}">
+                    <i class="fa fa-list" style="margin-right: 10px"></i>All Posts
                 </a>
             </li>
             <li>
                 <a href="{{route('roles.index')}}">
-                    <i class="fa fa-users" style="margin-right: 10px"></i>Roles
+                    <i class="fa fa-pencil-square-o" style="margin-right: 10px"></i>Create Post
                 </a>
             </li>
             <li>

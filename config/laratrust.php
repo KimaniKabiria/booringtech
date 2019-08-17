@@ -225,7 +225,7 @@ return [
          * Method to be called in the middleware return case.
          * Available: abort|redirect
          */
-        'handling' => 'abort',
+        'handling' => 'redirect',
 
         /**
          * Handlers for the unauthorized method in the middlewares.
@@ -236,7 +236,7 @@ return [
              * Aborts the execution with a 403 code.
              */
             'abort' => [
-                'code' => 403
+                'code' => '/login'
             ],
             /**
              * Redirects the user to the given url.
