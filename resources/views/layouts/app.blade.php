@@ -23,13 +23,13 @@
 <body>
     <div id="app">
 
-        @include('includes.mainnav')
+        @include('includes.main.mainnav')
 
         <main class="py-4">
             @yield('content')
         </main>
 
-        @include('includes.mainfoot')
+        @include('includes.main.mainfoot')
     </div>
 
     <!-- Scripts -->

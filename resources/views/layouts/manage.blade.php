@@ -22,8 +22,8 @@
 </head>
 <body>
 
-        @include('includes.managenav')
-        @include('includes.managesidenav')
+        @include('includes.manage.managenav')
+        @include('includes.manage.managesidenav')
 
     <div class="management-area" id="app">
         <main class="py-4">

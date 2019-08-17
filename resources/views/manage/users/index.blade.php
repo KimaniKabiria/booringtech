@@ -17,7 +17,7 @@
 
         <div class="card">
             <div class="card-content">
-                <table class="table is-fullwidth">
+                <table class="table is-fullwidth is-mobile">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -34,30 +34,32 @@
                                 <th>{{$user->name}}</th>
                                 <th>{{$user->email}}</th>
                                 <th>{{$user->created_at->toFormattedDateString()}}</th>
-                                <th><div class="dropdown is-hoverable">
-                                    <div class="dropdown-trigger">
-                                        <button class="button is-link is-outlined">
-                                        <span><h1 class="title is-7">More</h1></span>
-                                        <span class="icon is-small">
-                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                        </span>
-                                        </button>
-                                    </div>
-                                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                                        <div class="dropdown-content">
-                                            <a href="{{route('users.show', $user->id)}}" class="dropdown-item">
-                                                View
-                                            </a>
-                                            <a href="{{route('users.edit', $user->id)}}" class="dropdown-item">
-                                                Edit
-                                            </a>
-                                            <hr class="dropdown-divider">
-                                            <a href="#" class="dropdown-item">
-                                                Delete
-                                            </a>
+                                <th>
+                                    <div class="dropdown is-hoverable is-up">
+                                        <div class="dropdown-trigger">
+                                            <button class="button is-link is-outlined">
+                                            <span><h1 class="title is-7">More</h1></span>
+                                            <span class="icon is-small">
+                                                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                            </span>
+                                            </button>
+                                        </div>
+                                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                            <div class="dropdown-content">
+                                                <a href="{{route('users.show', $user->id)}}" class="dropdown-item">
+                                                    View
+                                                </a>
+                                                <a href="{{route('users.edit', $user->id)}}" class="dropdown-item">
+                                                    Edit
+                                                </a>
+                                                <hr class="dropdown-divider">
+                                                <a href="#" class="dropdown-item">
+                                                    Delete
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </th>
                             </tr>
                         @endforeach
                     </tbody>

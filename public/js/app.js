@@ -56836,6 +56836,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var buefy_dist_buefy_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(buefy_dist_buefy_css__WEBPACK_IMPORTED_MODULE_2__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./manage */ "./resources/js/manage.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
@@ -56911,6 +56913,22 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/manage.js":
+/*!********************************!*\
+  !*** ./resources/js/manage.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var manageSlideButton = document.getElementById('manageSlideout');
+
+manageSlideButton.onclick = function () {
+  this.classList.toggle('is-active');
+  document.getElementById('manageSideMenu').classList.toggle('is-active');
+};
 
 /***/ }),
 

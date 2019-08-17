@@ -1,18 +1,42 @@
-.side-menu {
+#manageSideMenu {
     position: fixed;
-    height: 100vh;
+    left: -200px;
+    height: 90vh;
+    bottom: 0;
     width: 200px;
-    background-color: #7957d5;
+    background-color: white;
     overflow-y: scroll hidden;
+    z-index: 100;
+    transition: left 0.3s ease-in-out;
+    &.is-active {
+        left: 0;
+        transition: left 0.3s ease-in-out;
+    }
+    @include desktop {
+        left: 0;
+    }
 }
 
 .management-area {
-    position: absolute;
     top: 4rem;
-    left: 200px;
     right: 0;
+    @include desktop {
+        position: absolute;
+        left: 200px;
+    }
 }
 
 .flex-container {
-    margin: 10px 25px;
+    margin: 80px 25px;
+    @include desktop {
+        margin: 10px 25px;
+    }
+}
+
+#manageSlideout {
+    transition: 0.3s;
+    &.is-active {
+        transition: 0.3s;
+        transform: rotateY(180deg);
+    }
 }

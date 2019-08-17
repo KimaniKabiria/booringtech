@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./manage');
 
 window.Vue = require('vue');
 import Vue from 'vue'

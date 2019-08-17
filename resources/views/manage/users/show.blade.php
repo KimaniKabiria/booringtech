@@ -9,7 +9,7 @@
             </div>
             <div class="column">
                 <a href="{{route('users.edit', $user->id)}}" class="button is-primary is-pulled-right">
-                    <i class="fa fa-user-plus" style="margin-right: 20px"></i>Edit
+                    <i class="fa fa-edit" style="margin-right: 20px"></i>Edit
                 </a>
             </div>
         </div>
@@ -26,6 +26,25 @@
                     <pre>{{$user->email}}</pre>
                 </div>
             </div>
+            <div class="column">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="field">
+                            <div class="field">
+                                <label for="email" class="label">Roles</label>
+                                <ul>
+                                @forelse ($user->roles as $role)
+                                    <li>{{$role->display_name}} ({{$role->description}})</li>
+                                @empty
+                                    <p>This user has not been assigned any roles yet</p>
+                                @endforelse
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
