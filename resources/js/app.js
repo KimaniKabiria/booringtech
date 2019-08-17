@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./studio');
 require('./manage');
 
 window.Vue = require('vue');

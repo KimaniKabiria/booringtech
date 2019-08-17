@@ -52,7 +52,7 @@
                                 </span>Notifications
                             </a>
                             @if (Laratrust::hasRole('superadministrator|administrator|editor|author|contributor'))
-                                <a href="#" class="navbar-item">
+                                <a href="{{route('studio.dashboard')}}" class="navbar-item">
                                     <span class="icon">
                                         <i class="fa fa-pencil" style="margin-right:10px"></i>
                                     </span>Create

@@ -19697,3 +19697,57 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
   transform: rotateY(180deg);
 }
 
+#studioSideMenu {
+  position: fixed;
+  left: -200px;
+  height: 85vh;
+  bottom: 0;
+  width: 200px;
+  background-color: white;
+  overflow-y: scroll hidden;
+  z-index: 100;
+  transition: left 0.3s ease-in-out;
+}
+
+#studioSideMenu.is-active {
+  left: 0;
+  transition: left 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 1024px) {
+  #studioSideMenu {
+    left: 0;
+  }
+}
+
+.studio-area {
+  top: 4rem;
+  right: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .studio-area {
+    position: absolute;
+    left: 200px;
+  }
+}
+
+.st-flex-container {
+  margin: 80px 25px;
+}
+
+@media screen and (min-width: 1024px) {
+  .st-flex-container {
+    margin: 10px 25px;
+  }
+}
+
+#studioSlideout {
+  transition: 0.3s;
+}
+
+#studioSlideout.is-active {
+  transition: 0.3s;
+  transform: rotateY(180deg);
+}
+

@@ -1,0 +1,42 @@
+#studioSideMenu {
+    position: fixed;
+    left: -200px;
+    height: 85vh;
+    bottom: 0;
+    width: 200px;
+    background-color: white;
+    overflow-y: scroll hidden;
+    z-index: 100;
+    transition: left 0.3s ease-in-out;
+    &.is-active {
+        left: 0;
+        transition: left 0.3s ease-in-out;
+    }
+    @include desktop {
+        left: 0;
+    }
+}
+
+.studio-area {
+    top: 4rem;
+    right: 0;
+    @include desktop {
+        position: absolute;
+        left: 200px;
+    }
+}
+
+.st-flex-container {
+    margin: 80px 25px;
+    @include desktop {
+        margin: 10px 25px;
+    }
+}
+
+#studioSlideout {
+    transition: 0.3s;
+    &.is-active {
+        transition: 0.3s;
+        transform: rotateY(180deg);
+    }
+}
