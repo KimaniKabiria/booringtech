@@ -31,9 +31,7 @@
                             <p class="help is-danger" role="alert">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="field">
-                        <b-checkbox name="remember">Remember Me</b-checkbox>
-                    </div>
+                        <b-checkbox name="remember" class="m-t-20" v-model="remember" native-value="remember">Remember Me</b-checkbox>
                     <button class="button is-primary is-outlined is-fullwidth" style="margin-top:30px" type="submit">Log In</button>
                 </form>
 
@@ -50,4 +48,13 @@
     <img src="{{asset('images/login.png')}}" class="image" width="875px" height="50%">
 </div>
 
+@endsection
+
+@section('scripts')
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {}
+        });
+    </script>
 @endsection

@@ -1,4 +1,4 @@
-<nav class="navbar has-shadow is-spaced">
+<nav class="navbar has-shadow is-spaced is-fixed-top">
     <div class="navbar-brand">
       <a class="navbar-item" href="{{route('home')}}">
         <img src="{{asset('images/logo.png')}}">

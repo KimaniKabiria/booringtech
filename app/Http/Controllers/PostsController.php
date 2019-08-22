@@ -14,7 +14,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('studio.posts.index');
+        $posts = Posts::orderBy('id', 'desc')->paginate(10);
+        return view('studio.posts.index')->withPosts($posts);
     }
 
     /**
@@ -35,7 +36,27 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the data
+        $this->validate($request, array(
+            'slug'          => 'required|alpha_dash|unique:posts,slug',
+            'title'         => 'required',
+            'subtitle'      => 'required',
+            'content'       => 'required'
+        ));
+
+        // store in the database
+        $posts = new Posts();
+
+        $posts->title = $request->title;
+        $posts->subtitle = $request->subtitle;
+        $posts->slug = $request->slug;
+        $posts->content = $request->content;
+
+        $posts->save();
+
+        // Session::flash('success', 'The blog post was successfully save!');
+
+        return redirect()->route('posts.show', $posts->id);
     }
 
     /**
@@ -46,7 +67,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Posts::find($id);
+        return view('studio.posts.show')->withPost($post);
     }
 
     /**
