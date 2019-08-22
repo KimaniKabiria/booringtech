@@ -1,5 +1,7 @@
 @extends('layouts.manage')
 
+@section('title', '| Create a User')
+
 @section('content')
 
     <div class="flex-container">
@@ -10,47 +12,64 @@
         </div>
         <hr style="margin-top:-15px">
 
-        <div class="columns">
-            <div class="column is-one-third is-offset-one-third">
-                <form action="{{route('users.store')}}" method="POST">
-                    @csrf
+        <form action="{{route('users.store')}}" method="POST">
+            {{csrf_field()}}
+            <div class="columns">
+                <div class="column">
+                <div class="field">
+                    <label for="name" class="label">Name</label>
+                    <p class="control">
+                    <input type="text" class="input" name="name" id="name">
+                    </p>
+                </div>
+
+                <div class="field">
+                    <label for="email" class="label">Email:</label>
+                    <p class="control">
+                    <input type="text" class="input" name="email" id="email">
+                    </p>
+                </div>
+
+                <div class="field">
+                    <label for="password" class="label">Password</label>
+                    <p class="control">
+                    <input type="text" class="input" name="password" id="password" placeholder="Manually give a password to this user">
+                    {{-- <b-checkbox name="auto_generate" class="m-t-15" v-model="auto_password">Auto Generate Password</b-checkbox> --}}
+                    </p>
+                </div>
+                </div> <!-- end of .column -->
+
+                <div class="column">
+                <label for="roles" class="label">Roles:</label>
+                <input type="hidden" name="roles" :value="rolesSelected" />
+
+                    @foreach ($roles as $role)
                     <div class="field">
-                        <label for="name" class="label">Name:</label>
-                        <p class="control">
-                            <input class="input" type="text" name="name" id="name" >
-                        </p>
+                        <b-checkbox v-model="rolesSelected" :native-value="{{$role->id}}">{{$role->display_name}}</b-checkbox>
                     </div>
-                    <div class="field">
-                        <label for="email" class="label">Email Address:</label>
-                        <p class="control">
-                            <input class="input" type="text" name="email" id="email">
-                        </p>
-                    </div>
-                    <div class="field">
-                        <label for="password" class="label">Password:</label>
-                        <p class="control">
-                            <input class="input" type="text" name="password" id="password">
-                            {{-- <b-checkbox name="auto_generate" style="margin-top:20px" v-model="auto_password">Auto Generate Password</b-checkbox> --}}
-                        </p>
-                    </div>
-                    <button class="button is-primary is-outlined is-fullwidth" style="margin-top:30px" type="submit">Create User</button>
-                </form>
+                    @endforeach
+                </div>
+            </div> <!-- end of .columns for forms -->
+            <div class="columns">
+                <div class="column">
+                <hr />
+                <button class="button is-primary is-pulled-right" style="width: 250px;">Create New User</button>
+                </div>
             </div>
-        </div>
+        </form>
 
     </div>
 
 @endsection
 
 @section('scripts')
-
-    <script>
-        var app = new Vue({
-            el:'#app',
-            data: {
-                auto_password: true
-            }
-        });
-    </script>
-
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+        // auto_password: true,
+        rolesSelected: [{!! old('roles') ? old('roles') : '' !!}]
+        }
+    });
+</script>
 @endsection

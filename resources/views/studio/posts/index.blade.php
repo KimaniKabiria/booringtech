@@ -1,5 +1,7 @@
 @extends('layouts.studio')
 
+@section('title', '| All Posts')
+
 @section('content')
 
     <div class="st-flex-container">
