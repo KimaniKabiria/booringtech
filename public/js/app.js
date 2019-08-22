@@ -45374,9 +45374,8 @@ var render = function() {
               [
                 _c("span", [_vm._v("Actions")]),
                 _vm._v(" "),
-                _c("b-icon", { attrs: { icon: "arrow_drop_down" } })
-              ],
-              1
+                _c("i", { staticClass: "fa fa-arrow-down m-l-5 m-t-5" })
+              ]
             ),
             _vm._v(" "),
             _c(
@@ -45390,12 +45389,9 @@ var render = function() {
                 }
               },
               [
-                _c("b-icon", {
-                  attrs: { icon: "content_copy", size: "is-small" }
-                }),
+                _c("i", { staticClass: "fa fa-clone m-r-5" }),
                 _vm._v(" Copy Full Url")
-              ],
-              1
+              ]
             ),
             _vm._v(" "),
             _c(
@@ -45409,12 +45405,9 @@ var render = function() {
                 }
               },
               [
-                _c("b-icon", {
-                  attrs: { icon: "content_copy", size: "is-small" }
-                }),
+                _c("i", { staticClass: "fa fa-clone m-r-5" }),
                 _vm._v(" Copy Slug")
-              ],
-              1
+              ]
             ),
             _vm._v(" "),
             _c(
@@ -45424,15 +45417,10 @@ var render = function() {
                 attrs: { "has-link": "" }
               },
               [
-                _c(
-                  "a",
-                  { attrs: { href: _vm.fullUrl, target: "_blank" } },
-                  [
-                    _c("b-icon", { attrs: { icon: "link", size: "is-small" } }),
-                    _vm._v("\n          Visit Url\n        ")
-                  ],
-                  1
-                )
+                _c("a", { attrs: { href: _vm.fullUrl, target: "_blank" } }, [
+                  _c("i", { staticClass: "fa fa-link m-r-5" }),
+                  _vm._v("\n          Visit Url\n        ")
+                ])
               ]
             )
           ],

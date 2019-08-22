@@ -47,13 +47,13 @@
       <b-dropdown hoverable v-show="!isEditing && slug.length > 1">
         <button class="save-slug-button button is-small" slot="trigger">
           <span>Actions</span>
-          <b-icon icon="arrow_drop_down"></b-icon>
+            <i class="fa fa-arrow-down m-l-5 m-t-5"></i>
         </button>
-        <b-dropdown-item @click="copyToClipboard(fullUrl)" style="font-size: 0.8em;"><b-icon icon="content_copy" size="is-small"></b-icon> Copy Full Url</b-dropdown-item>
-        <b-dropdown-item @click="copyToClipboard(slug)" style="font-size: 0.8em;"><b-icon icon="content_copy" size="is-small"></b-icon> Copy Slug</b-dropdown-item>
+        <b-dropdown-item @click="copyToClipboard(fullUrl)" style="font-size: 0.8em;"><i class="fa fa-clone m-r-5"></i> Copy Full Url</b-dropdown-item>
+        <b-dropdown-item @click="copyToClipboard(slug)" style="font-size: 0.8em;"><i class="fa fa-clone m-r-5"></i> Copy Slug</b-dropdown-item>
         <b-dropdown-item has-link style="font-size: 0.8em;">
           <a :href="fullUrl" target="_blank">
-            <b-icon icon="link" size="is-small"></b-icon>
+            <i class="fa fa-link m-r-5"></i>
             Visit Url
           </a>
         </b-dropdown-item>

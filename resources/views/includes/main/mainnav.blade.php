@@ -4,6 +4,13 @@
             <img src="{{asset('images/logo.png')}}">
           </a>
 
+
+            <a class="navbar-item is-hidden-desktop is-hidden-mobile" id="studioSlideout">
+                <span class="icon">
+                <i class="fa fa-arrow-circle-right"></i>
+                </span>
+            </a>
+
           <a role="button" class="navbar-burger burger" data-target="navbarMain">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
