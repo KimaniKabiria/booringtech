@@ -10,11 +10,6 @@
                 <h1 class="title is-3 has-text-success is-admin">{{ $post->title }}</h1>
                 <p class="has-text-warning" style="margin-top:-15px" >{{ $post->subtitle }}</p>
             </div>
-            <div class="column">
-                <a href="{{route('posts.edit', $post->id)}}" class="button is-primary is-pulled-right">
-                    <i class="fa fa-pencil" style="margin-right: 20px"></i>Edit this Post
-                </a>
-            </div>
         </div>
         <hr style="margin-top:-15px">
 
@@ -27,7 +22,7 @@
                 </div>
             </div>
             <div class="column is-one-quarter-desktop is-narrow-tablet">
-                <div class="card card-widget">
+                <div class="card card-widget" style="border-radius:15px">
                     <div class="author-widget widget-area">
                         <div class="selected-author">
                             <img src="https://placehold.it/50x50"/>
@@ -59,6 +54,24 @@
                                 <h4><span class="status-emphasis">Updated</span> at</h4>
                                 <p>{{ date('M j, Y h:ia', strtotime($post->updated_at)) }}</p>
                             </div>
+                        </div>
+                    </div>
+                    <div class="publish-buttons-widget widget-area">
+                        <div class="secondary-action-button">
+                            <a href="#">
+                                <button class="button is-danger is-outlined is-fullwidth">
+                                    <i class="fa fa-trash" style="margin-right: 20px"></i>
+                                    Trash
+                                </button>
+                            </a>
+                        </div>
+                        <div class="primary-action-button">
+                            <a href="{{route('posts.edit', $post->id)}}">
+                                <button class="button is-primary is-fullwidth" type="submit">
+                                    <i class="fa fa-edit" style="margin-right: 20px"></i>
+                                    Edit
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>

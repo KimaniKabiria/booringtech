@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
+use LaraFlash;
 
 class PostsController extends Controller
 {
@@ -54,7 +55,7 @@ class PostsController extends Controller
 
         $posts->save();
 
-        // Session::flash('success', 'The blog post was successfully save!');
+        LaraFlash::success("Post saved Successfully!");
 
         return redirect()->route('posts.show', $posts->id);
     }
@@ -79,7 +80,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Posts::find($id);
+        return view('studio.posts.edit')->withPost($post);
     }
 
     /**
@@ -91,7 +93,25 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate the data
+        $this->validate($request, array(
+            'title'         => 'required',
+            'subtitle'      => 'required',
+            'content'       => 'required'
+        ));
+
+        // store in the database
+        $posts = Posts::findOrFail($id);
+
+        $posts->title = $request->title;
+        $posts->subtitle = $request->subtitle;
+        $posts->content = $request->content;
+
+        $posts->save();
+
+        LaraFlash::success("Post updated Successfully!");
+
+        return redirect()->route('posts.show', $posts->id);
     }
 
     /**
