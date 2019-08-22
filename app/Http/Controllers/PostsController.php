@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Posts;
 
 class PostsController extends Controller
 {
@@ -23,7 +24,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('studio.posts.create');
     }
 
     /**
@@ -80,5 +81,10 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function apiCheckUnique(Request $request)
+    {
+        return json_encode(!Posts::where('slug', '=', $request->slug)->exists());
     }
 }

@@ -10,9 +10,6 @@
 
     <title>BooringTech - Mission Control</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -25,7 +22,7 @@
         @include('includes.studio.studionav')
         @include('includes.studio.studiosidenav')
 
-    <div class="management-area" id="app">
+    <div class="studio-area" id="app">
         <main class="py-4">
             @yield('content')
         </main>

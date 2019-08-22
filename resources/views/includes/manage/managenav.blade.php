@@ -4,7 +4,7 @@
             <img src="{{asset('images/logo.png')}}">
           </a>
 
-          <a class="navbar-item is-hidden-desktop" id="manageSlideout">
+          <a class="navbar-item is-hidden-desktop" id="studioSlideout">
             <span class="icon">
               <i class="fa fa-arrow-circle-right"></i>
             </span>

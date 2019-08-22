@@ -1,5 +1,5 @@
-<div class="manageSideMenu" id="manageSideMenu">
-    <aside class="menu" style="margin-left:20px;margin-top:20px;">
+<div class="studioSideMenu" id="studioSideMenu">
+    <aside class="menu" style="margin-left:20px;">
         <p class="menu-label">
             General
             <hr style="margin-top:1px;margin-bottom:1px">

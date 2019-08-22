@@ -19,13 +19,8 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('roles.index')}}">
+                <a href="{{route('posts.create')}}">
                     <i class="fa fa-pencil-square-o" style="margin-right: 10px"></i>Create Post
-                </a>
-            </li>
-            <li>
-                <a href="{{route('permissions.index')}}">
-                    <i class="fa fa-lock" style="margin-right: 10px"></i>Permissions
                 </a>
             </li>
         </ul>

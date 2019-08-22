@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
+        App\Providers\ObserverServiceProvider::class,
 
     ],
 

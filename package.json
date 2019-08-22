@@ -23,7 +23,8 @@
         "vue-template-compiler": "^2.6.10",
         "buefy": "^0.8.2",
         "bulma": "^0.7.5",
-        "font-awesome": "^4.7.0"
+        "font-awesome": "^4.7.0",
+        "slug": "^1.1.0"
     },
     "dependencies": {}
 }

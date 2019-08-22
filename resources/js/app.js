@@ -1,17 +1,14 @@
 require('./bootstrap');
-require('./studio');
-require('./manage');
 
 window.Vue = require('vue');
 import Vue from 'vue'
 
-import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
+window.Slug = require('slug');
+Slug.defaults.mode = 'rfc3986';
 
+import Buefy from 'buefy'
 Vue.use(Buefy);
 
-Vue.component(Buefy.Radio.name, Buefy.Radio);
-var app = new Vue({
-    el: '#app',
-    data: {}
-});
+Vue.component('slug-widget', require('./components/slugWidget.vue').default);
+
+require('./studio');
