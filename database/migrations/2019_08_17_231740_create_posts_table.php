@@ -20,8 +20,8 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->longText('content');
+            $table->unsignedBigInteger('category_id')->nullable();
             // $table->integer('status')->default(1);
-            // $table->dateTime('published_at');
             $table->timestamps();
 
 

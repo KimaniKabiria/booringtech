@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LaraFlash;
 
 class StudioController extends Controller
 {
@@ -11,6 +12,8 @@ class StudioController extends Controller
     }
 
     public function dashboard(){
-        return view('studio.dashboard');
+
+        LaraFlash::success("Welcome to the Studio!");
+            return view('studio.dashboard');
     }
 }

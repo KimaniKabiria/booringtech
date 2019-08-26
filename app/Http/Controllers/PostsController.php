@@ -55,9 +55,8 @@ class PostsController extends Controller
 
         $posts->save();
 
-        LaraFlash::success("Post saved Successfully!");
-
-        return redirect()->route('posts.show', $posts->id);
+        LaraFlash::add()->content('Post Saved Successfully!')->priority(6)->type('Success');
+            return redirect()->route('posts.show', $posts->id);
     }
 
     /**
@@ -109,9 +108,8 @@ class PostsController extends Controller
 
         $posts->save();
 
-        LaraFlash::success("Post updated Successfully!");
-
-        return redirect()->route('posts.show', $posts->id);
+        LaraFlash::add()->content('Post Updated Successfully!')->priority(6)->type('Success');
+            return redirect()->route('posts.show', $posts->id);
     }
 
     /**

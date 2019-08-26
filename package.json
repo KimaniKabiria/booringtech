@@ -24,7 +24,8 @@
         "buefy": "^0.8.2",
         "bulma": "^0.7.5",
         "font-awesome": "^4.7.0",
-        "slug": "^1.1.0"
+        "slug": "^1.1.0",
+        "vee-validate": "^3.0.2"
     },
     "dependencies": {}
 }
