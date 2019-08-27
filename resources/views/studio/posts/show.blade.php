@@ -59,7 +59,7 @@
                     <div class="post-status-widget widget-area">
                         <div class="status">
                             <div class="field m-l-15">
-                                <label for="categories" class="title is-5 has-text-info">Categories:</label>
+                                <label for="categories" class="title is-5 has-text-info">Category:</label>
                                 <p>{{ $post->category->title }}</p>
                             </div>
                         </div>

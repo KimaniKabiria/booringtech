@@ -68,7 +68,7 @@
                         <div class="status">
                             <div class="columns">
                                 <div class="column m-l-10">
-                                    <label for="categories" class="title is-5 has-text-warning">Categories</label>
+                                    <label for="categories" class="title is-5 has-text-warning">Category</label>
                                         <div class="m-t-10"></div>
                                         <div class="select is-medium">
 			                                <select name="category_id">
