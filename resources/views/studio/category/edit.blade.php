@@ -19,15 +19,21 @@
             <div class="columns">
                 <div class="column is-three-quarters-desktop is-three-quarters-tablet">
                     <div class="field">
+                        <label for="title" class="label">Title:</label>
                         <div class="control">
                             <input class="input is-large" type="text" value="{{$category->title}}" id="title" name="title">
                         </div>
                     </div>
 
-                    {{-- <slug-widget url="{{url('/')}}" subdirectory="blog" :title="title" @copied="slugCopied" @slug-changed="updateSlug"></slug-widget>
-                    <input type="hidden" v-model="slug" name="slug" /> --}}
+                    <div class="field">
+                        <label for="slug" class="label">Slug:</label>
+                        <div class="control">
+                            <input class="input is-large" type="text" value="{{$category->slug}}" name="slug" />
+                        </div>
+                    </div>
 
                     <div class="field m-t-20">
+                        <label for="desc" class="label">Description:</label>
                         <div class="control">
                             <input class="input is-medium" type="text" value="{{$category->desc}}" id="desc" name="desc" >
                         </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use LaraFlash;
 use App\Posts;
 use App\Category;
+use Session;
 
 
 class CategoryController extends Controller
@@ -55,8 +56,8 @@ class CategoryController extends Controller
 
         $categories->save();
 
-        LaraFlash::add()->content('Post Saved Successfully!')->priority(6)->type('Success');
-            return redirect()->route('category.show', $categories->id);
+        Session::flash('success', 'Well Done! A Category has been created');
+        return redirect()->route('category.show', $categories->id);
     }
 
     /**
@@ -106,8 +107,8 @@ class CategoryController extends Controller
 
         $categories->save();
 
-        LaraFlash::add()->content('Category Updated Successfully!')->priority(6)->type('Success');
-            return redirect()->route('category.show', $categories->id);
+        Session::flash('success', 'Wow! You have updated your category.');
+        return redirect()->route('category.show', $categories->id);
     }
 
     /**

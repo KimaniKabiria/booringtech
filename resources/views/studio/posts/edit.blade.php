@@ -64,12 +64,35 @@
                         </div>
                     </div>
                     </div>
+                    <div class="post-status-widget widget-area">
+                        <div class="status">
+                            <div class="columns">
+                                <div class="column m-l-10">
+                                    <label for="categories" class="title is-5 has-text-warning">Categories</label>
+                                        <div class="m-t-10"></div>
+                                        <div class="select is-medium">
+			                                <select name="category_id">
+                                                {{ $cats = $post->category_id}}
+                                                @foreach($categories as $category)
+                                                {{ $cat = $category->id}}
+                                                    @if($cat == $cats )
+                                                        <option value='{{ $category->id }}' selected = 'selected'>{{ $category->title }}</option>
+                                                    @else
+                                                        <option value='{{ $category->id }}'>{{ $category->title }}</option>
+                                                    @endif
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="publish-buttons-widget widget-area">
                     {{-- <div class="secondary-action-button">
                         <button class="button is-info is-outlined is-fullwidth">Save Draft</button>
                     </div> --}}
                     <div class="primary-action-button">
-                        <button class="button is-primary is-fullwidth" type="submit">Publish</button>
+                        <button class="button is-primary is-fullwidth" type="submit">Update</button>
                     </div>
                     </div>
                 </div>

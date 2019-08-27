@@ -8,7 +8,7 @@
         <div class="columns">
             <div class="column">
                 <h1 class="title is-3 has-text-success is-admin">{{ $post->title }}</h1>
-                <p class="has-text-warning" style="margin-top:-15px" >{{ $post->subtitle }}</p>
+                <h3 class="title has-text-info is-5" style="margin-top:-15px" >{{ $post->subtitle }}</h3>
             </div>
         </div>
         <hr style="margin-top:-15px">
@@ -53,6 +53,14 @@
                             <div class="status-details">
                                 <h4><span class="status-emphasis">Updated</span> at</h4>
                                 <p>{{ date('M j, Y h:ia', strtotime($post->updated_at)) }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-status-widget widget-area">
+                        <div class="status">
+                            <div class="field m-l-15">
+                                <label for="categories" class="title is-5 has-text-info">Categories:</label>
+                                <p>{{ $post->category->title }}</p>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Posts;
 use LaraFlash;
+use App\Category;
 
 class PostsController extends Controller
 {
@@ -26,7 +27,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('studio.posts.create');
+        $categories = Category::all();
+        return view('studio.posts.create')->withCategories($categories);
     }
 
     /**
@@ -42,7 +44,8 @@ class PostsController extends Controller
             'slug'          => 'required|alpha_dash|unique:posts,slug',
             'title'         => 'required',
             'subtitle'      => 'required',
-            'content'       => 'required'
+            'content'       => 'required',
+            'category_id'   => 'required|integer'
         ));
 
         // store in the database
@@ -52,6 +55,7 @@ class PostsController extends Controller
         $posts->subtitle = $request->subtitle;
         $posts->slug = $request->slug;
         $posts->content = $request->content;
+        $posts->category_id = $request->category_id;
 
         $posts->save();
 
@@ -80,7 +84,8 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Posts::find($id);
-        return view('studio.posts.edit')->withPost($post);
+        $categories = Category::all();
+        return view('studio.posts.edit')->withPost($post)->withCategories($categories);
     }
 
     /**
@@ -96,7 +101,8 @@ class PostsController extends Controller
         $this->validate($request, array(
             'title'         => 'required',
             'subtitle'      => 'required',
-            'content'       => 'required'
+            'content'       => 'required',
+            'category_id'   => 'required|integer'
         ));
 
         // store in the database
@@ -105,6 +111,7 @@ class PostsController extends Controller
         $posts->title = $request->title;
         $posts->subtitle = $request->subtitle;
         $posts->content = $request->content;
+        $posts->category_id = $request->category_id;
 
         $posts->save();
 
