@@ -23,6 +23,11 @@
                     <i class="fa fa-pencil-square-o" style="margin-right: 10px"></i>Create Post
                 </a>
             </li>
+            <li>
+                <a href="{{route('category.index')}}">
+                    <i class="fa fa-list-alt" style="margin-right: 10px"></i>Categories
+                </a>
+            </li>
         </ul>
 
     </aside>

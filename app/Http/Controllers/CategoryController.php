@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LaraFlash;
+use App\Posts;
+use App\Category;
+
 
 class CategoryController extends Controller
 {
@@ -13,7 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('studio.category.index')->withCategories($categories);
     }
 
     /**
@@ -23,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('studio.category.create');
     }
 
     /**
@@ -34,7 +39,24 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the data
+        $this->validate($request, array(
+            'slug'          => 'required|alpha_dash|unique:posts,slug',
+            'title'         => 'required',
+            'desc'          => 'required'
+        ));
+
+        // store in the database
+        $categories = new Category();
+
+        $categories->title = $request->title;
+        $categories->slug = $request->slug;
+        $categories->desc = $request->desc;
+
+        $categories->save();
+
+        LaraFlash::add()->content('Post Saved Successfully!')->priority(6)->type('Success');
+            return redirect()->route('category.show', $categories->id);
     }
 
     /**
@@ -45,7 +67,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+        return view('studio.category.show')->withCategory($category);
     }
 
     /**
@@ -56,7 +79,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('studio.category.edit')->withCategory($category);
     }
 
     /**
@@ -68,7 +92,22 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate the data
+        $this->validate($request, array(
+            'title'         => 'required',
+            'desc'          => 'required'
+        ));
+
+        // store in the database
+        $categories = Category::findOrFail($id);
+
+        $categories->title = $request->title;
+        $categories->desc = $request->desc;
+
+        $categories->save();
+
+        LaraFlash::add()->content('Category Updated Successfully!')->priority(6)->type('Success');
+            return redirect()->route('category.show', $categories->id);
     }
 
     /**
@@ -80,5 +119,10 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function apiCheckUnique(Request $request)
+    {
+        return json_encode(!Posts::where('slug', '=', $request->slug)->exists());
     }
 }

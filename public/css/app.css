@@ -19935,12 +19935,12 @@ MIT (https://github.com/Wikiki/bulma-steps/blob/master/LICENSE)
 }
 
 .st-flex-container {
-  margin: 50px 25px 0px 25px;
+  margin: 40px 25px 0px 25px;
 }
 
 @media screen and (max-width: 768px) {
   .st-flex-container {
-    margin: 20px 25px 0px 25px;
+    margin: 70px 25px 0px 25px;
   }
 }
 
