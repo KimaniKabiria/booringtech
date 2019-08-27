@@ -28,6 +28,11 @@
                     <i class="fa fa-list-alt" style="margin-right: 10px"></i>Categories
                 </a>
             </li>
+            <li>
+                <a href="{{route('tags.index')}}">
+                    <i class="fa fa-tags" style="margin-right: 10px"></i>Tags
+                </a>
+            </li>
         </ul>
 
     </aside>

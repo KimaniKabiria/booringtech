@@ -32,6 +32,7 @@ Route ::prefix('studio')->middleware('role:superadministrator|administrator|edit
     Route::get('/dashboard', 'StudioController@dashboard')->name('studio.dashboard');
     Route::resource('/posts', 'PostsController');
     Route::resource('/category', 'CategoryController')->middleware('role:superadministrator|administrator|editor');
+    Route::resource('/tags', 'TagsController');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
